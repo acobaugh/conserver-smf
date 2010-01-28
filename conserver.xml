@@ -24,6 +24,15 @@
 			type='service'>
 			<service_fmri value='svc:/network/physical' />
 		</dependency>
+		
+	<dependency
+		name='conservercf'
+		grouping='require_all'
+		restart_on='none'
+		type='path'>
+		    <service_fmri 
+			 value='file://localhost/etc/opt/bx/conserver.cf' />
+	</dependency> 
 
 		<exec_method name='start'
 			type='method'
