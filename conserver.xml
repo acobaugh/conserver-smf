@@ -27,17 +27,17 @@
 
 		<exec_method name='start'
 			type='method'
-			exec='/opt/bx/heimdal/sbin/conserver.method start'
+			exec='/opt/bx/sbin/conserver.method start'
 			timeout_seconds='300' />
 
 		<exec_method name='stop'
 			type='method'
-			exec='/opt/bx/heimdal/sbin/conserver.method stop'
+			exec='/opt/bx/sbin/conserver.method stop'
 			timeout_seconds='60' />
 
 		<property_group name='conserver' type='application'>
 			<stability value='Unstable' />
-			<propval name='options' type='astring' value='-d' />
+			<propval name='options' type='astring' value='-Ed' />
 		</property_group>
 
 		<template>
