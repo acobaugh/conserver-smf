@@ -1,0 +1,26 @@
+#!/bin/sh
+
+#
+# $Id$
+#
+
+. /lib/svc/share/smf_include.sh
+
+PREFIX="/opt/bx/"
+OPTIONS="`svcprop -p conserver/options svc:/bx/network/conserver`"
+
+case "$1" in
+start)
+	LD_LIBRARY_PATH=/lib:/usr/lib:/usr/sfw/lib:/opt/sfw/lib \
+		$PREFIX/sbin/conserver $OPTIONS
+# end of start method
+;;
+
+stop)
+	pkill -x conserver
+;;
+*)
+	echo "Usage: $0 {start|stop}"
+	exit 1
+	;;
+esac
